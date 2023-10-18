@@ -1,4 +1,3 @@
-import project01 from "./../img/projects/01-big.jpg"
 import BtnGithub from "../components/btnGithub/BtnGithub";
 
 
@@ -7,7 +6,8 @@ import {projects} from "../helpers/projectsList";
 
 const Project = () => {
     const {id} = useParams();
-    const project = projects[id];
+    const projectId = parseInt(id, 10);
+    const project = projects.find(p => p.id === projectId);
     return (
         <main className="section">
             <div className="container">
